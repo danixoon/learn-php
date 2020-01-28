@@ -1,23 +1,19 @@
-﻿<?php
-session_start();
-?>
+<?php
 
-<html>
+include_once 'includes/config.php';
+include "utils/page.php";
 
-<head>
-    <script src="./index.js"></script>
-    <link rel="stylesheet" href="./styles.css" />
-</head>
+function generate_page_path($page)
+{
+    return "pages/" . $page . ".php";
+}
 
-<body>
-    <form action="./handler.php" method="POST">
-        <input type="username" name="username" />
-        <button type="submit"> Тест </button>
-    </form>
-    <button onclick="Downloader.fetchCurrency"> Загрузить </button>
-    <ul id="currencyTable">
+$page = $_GET["page"];
 
-    </ul>
-</body>
+if ($page == '')
+    $page = "main";
+else if (!file_exists(generate_page_path($page)))
+    $page = "404";
 
-</html>
+echo "lol";
+echo generate_page(include(generate_page_path($page)));
