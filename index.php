@@ -1,8 +1,9 @@
 <?php
 
-include_once 'includes/config.php';
+include_once 'config.php';
 include "utils/page.php";
 
+session_start();
 
 $page = $_GET["page"];
 

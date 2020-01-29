@@ -15,7 +15,7 @@ function generate_page($page)
   <html lang="ru">
 
   <head>
-    <?php include 'includes/head-content.php' ?>
+    <?php include 'includes/contents/head.php' ?>
   </head>
 
   <body>
@@ -23,7 +23,7 @@ function generate_page($page)
       <?php include($path) ?>
 
     </main>
-    <?php include "includes/footer.php" ?>
+    <?php include "includes/components/footer.php" ?>
   </body>
 
   </html>
