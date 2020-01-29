@@ -1,5 +1,15 @@
-<?php function generate_page($content)
+<?php
+
+function generate_page_path($page)
 {
+  return "pages/" . $page . ".php";
+}
+
+function generate_page($page)
+{
+  ob_start();
+  $path = generate_page_path($page);
+
 ?>
 
   <html lang="ru">
@@ -10,7 +20,8 @@
 
   <body>
     <main>
-      <?php $content ?>
+      <?php include($path) ?>
+
     </main>
     <?php include "includes/footer.php" ?>
   </body>
