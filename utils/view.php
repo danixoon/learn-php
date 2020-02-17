@@ -1,14 +1,14 @@
 <?php
 
-function generate_page_path($page)
+function generate_view_path($page)
 {
-  return "pages/" . $page . ".php";
+  return "views/" . $page . ".php";
 }
 
-function generate_page($page)
+function render_view($page)
 {
   ob_start();
-  $path = generate_page_path($page);
+  $path = generate_view_path($page);
 
 ?>
 
