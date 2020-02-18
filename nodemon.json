@@ -1,11 +1,10 @@
 {
   "restartable": "rs",
   "ignore": [".git", "node_modules/**/node_modules"],
-  "verbose": true,
   "exec": "npm start",
-  "watch": ["client/src"],
+  "watch": ["client/src/"],
   "env": {
     "NODE_ENV": "development"
   },
-  "ext": "js,json"
+  "ext": "js,json,jsx,css"
 }

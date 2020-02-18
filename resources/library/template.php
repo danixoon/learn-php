@@ -20,7 +20,7 @@ function renderTemplate($contentFile, $variables = array())
     . `<head>`;
 
   require_once(TEMPLATES_PATH . "/head-content.php");
-  
+
   echo `<head/>`;
 
   require_once(TEMPLATES_PATH . "/header.php");

@@ -5,8 +5,9 @@ import { Provider } from "react-redux";
 import { createStore } from "./store";
 import Header from "./pages/Header";
 import Auth from "./pages/Auth";
-// import "./styles.css";
 import Footer from "./pages/Footer";
+
+import "./styles.css";
 
 export let store = null;
 
