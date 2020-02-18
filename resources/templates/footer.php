@@ -1,1 +1,1 @@
-<footer> i am a footer </footer>
+<footer id="page__footer"></footer>

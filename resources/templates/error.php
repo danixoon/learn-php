@@ -1,1 +1,1 @@
-<div> 404 </div>
+<div> error was occurred </div>

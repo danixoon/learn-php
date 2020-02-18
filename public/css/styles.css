@@ -2,21 +2,19 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
-main {
+#content {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-
   flex: 1;
 }
 
-footer {
-  height: 2rem;
-  background-color: darkslategray;
-  color: white;
-  margin-top: auto;
+#page__header {
+  border-bottom: 1px solid #eee;
+}
+
+#page__footer {
+  border-top: 1px solid #eee;
 }

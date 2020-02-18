@@ -1,11 +1,11 @@
 module.exports = {
   target: "web",
-  entry: "./client/src/index.jsx",
+  entry: ["babel-polyfill", "./client/src/index.jsx"],
   mode: "development",
   output: {
     path: __dirname + "/public/js",
     library: "app",
-    libraryTarget: "umd",
+    libraryTarget: "var",
     filename: "index.js"
   },
   resolve: {

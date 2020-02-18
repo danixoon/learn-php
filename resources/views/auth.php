@@ -1,0 +1,1 @@
+<div id="page__auth"></div>

@@ -1,17 +1,39 @@
-import * as _React from "react";
-import * as _ReactDOM from "react-dom";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import axios from "axios";
 import { Provider } from "react-redux";
+import { createStore } from "./store";
+import Header from "./pages/Header";
+import Auth from "./pages/Auth";
+// import "./styles.css";
+import Footer from "./pages/Footer";
 
-import { store as _store } from "./store";
-import Button from "./components/Button";
-
-export const store = _store;
-export const ReactDOM = _ReactDOM;
-export const React = _React;
-export const components = {
-  Button
-};
+export let store = null;
 
 export const renderComponent = (element, node) => {
-  return ReactDOM.render(<Provider store={store}>{React.createElement(element, {})}</Provider>, node);
+  return ReactDOM.render(
+    <Provider store={store}>{React.createElement(element, {})}</Provider>,
+    node
+  );
 };
+
+// Мапа с компонентами, присоединёнными по id
+const componentMap = {
+  page__header: Header,
+  page__auth: Auth,
+  page__footer: Footer
+};
+
+// Рендрит React-компоненты под элементы с соответствующими id
+document.addEventListener("DOMContentLoaded", async () => {
+  // Получает данные об начальном состоянии с сервера
+  const res = await axios.get("/store.php");
+  console.log(res);
+  store = createStore(res.data);
+
+  for (let k in componentMap) {
+    const el = document.getElementById(k);
+    console.log(k, "rendering..");
+    if (el) renderComponent(componentMap[k], el);
+  }
+});
