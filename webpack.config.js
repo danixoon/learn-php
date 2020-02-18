@@ -1,6 +1,6 @@
 module.exports = {
   target: "web",
-  entry: ["babel-polyfill", "./client/src/index.jsx"],
+  entry: ["babel-polyfill", __dirname + "/client/src/index.jsx"],
   mode: "development",
   output: {
     path: __dirname + "/public/js",

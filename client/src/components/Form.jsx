@@ -12,7 +12,7 @@ const Form = props => {
       }}
     >
       {children}
-    </form>
+    </form> 
   );
 };
 

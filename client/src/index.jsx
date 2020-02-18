@@ -11,10 +11,7 @@ import Footer from "./pages/Footer";
 export let store = null;
 
 export const renderComponent = (element, node) => {
-  return ReactDOM.render(
-    <Provider store={store}>{React.createElement(element, {})}</Provider>,
-    node
-  );
+  ReactDOM.render(<Provider store={store}>{React.createElement(element, {})}</Provider>, node);
 };
 
 // Мапа с компонентами, присоединёнными по id
