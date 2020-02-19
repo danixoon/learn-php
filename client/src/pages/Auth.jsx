@@ -8,7 +8,7 @@ const Auth = props => {
   const [input, bind] = useInput();
   const handleSubmit = () => {
     console.log("you submitted: ", input);
-    axios.get("/api/auth.php", { params: input }).then(res => console.log(res.data));
+    axios.get("/api/auth.php", { params: { ...input, token: "1488" } }).then(res => console.log(res.data));
   };
   return (
     <>

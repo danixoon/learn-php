@@ -2,5 +2,5 @@
 require_once realpath(dirname(__FILE__) .  "/../config.php");
 ?>
 
-<link href="public/css/styles.css" rel="stylesheet" />
-<script src="public/js/index.js"></script>
+<link href="css/styles.css" rel="stylesheet" />
+<script src="js/index.js"></script>

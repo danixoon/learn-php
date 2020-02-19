@@ -6,6 +6,11 @@ body {
   /* background-color: red; */
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+
 input {
   display: block;
   margin: 0.5rem;

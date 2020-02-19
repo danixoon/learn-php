@@ -1,8 +1,9 @@
 <?php
 require_once realpath(dirname(__FILE__) . "/../config.php");
 require_once LIBRARY_PATH . "/request.php";
+require_once LIBRARY_PATH . "/middleware/auth.php";
 
-handle_request("GET", function () {
+handle_request("GET", $auth_middleware,  function () {
   $username = $_REQUEST["username"];
   $password = $_REQUEST["password"];
 
