@@ -16,6 +16,9 @@ button.btn-primary {
   background-color: #5a92ff;
   color: white; }
 
+#page__auth {
+  min-width: 400px; }
+
 body,
 input,
 button {
@@ -34,7 +37,7 @@ input {
   border: none;
   border-bottom: 1px solid #dddddd; }
 
-#content {
+#page__content {
   display: flex;
   justify-content: center;
   align-items: center;

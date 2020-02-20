@@ -6,4 +6,4 @@ const Header = props => {
   return <>hi, {username}</>;
 };
 
-export default connect(store => ({ username: store.username }))(Header);
+export default connect(store => ({ username: store.user.username }))(Header);

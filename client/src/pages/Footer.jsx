@@ -6,4 +6,4 @@ const Footer = props => {
   return <>bye, {username}</>;
 };
 
-export default connect(store => ({ username: store.username }))(Footer);
+export default connect(store => ({ username: store.user.username }))(Footer);

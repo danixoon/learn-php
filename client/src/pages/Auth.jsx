@@ -5,6 +5,8 @@ import useInput from "../hooks/useInput";
 import Form from "../components/Form";
 import Button from "../components/Button";
 
+import "./Auth.scss";
+
 const Auth = props => {
   const [input, bind] = useInput();
   const handleSubmit = () => {
@@ -25,4 +27,4 @@ const Auth = props => {
   );
 };
 
-export default connect(store => ({ username: store.username }))(Auth);
+export default connect(store => ({ username: store.user.username }))(Auth);

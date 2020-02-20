@@ -1,6 +1,7 @@
 <?php
 
 require_once realpath(dirname(__FILE__) . "/../config.php");
+require_once LIBRARY_PATH . "/store.php";
 
 function renderTemplate($contentFile, $variables = array())
 {
@@ -16,8 +17,10 @@ function renderTemplate($contentFile, $variables = array())
     }
   }
 
+  $store = get_store();
+
   echo `<html lang="ru">\n`
-    . `<head>`;
+    . "<head data-store='{$store}'>";
 
   require_once(TEMPLATES_PATH . "/head-content.php");
 
@@ -25,7 +28,7 @@ function renderTemplate($contentFile, $variables = array())
 
   require_once(TEMPLATES_PATH . "/header.php");
 
-  echo "<div id=\"content\">\n";
+  echo "<div id='page__content'>\n";
 
   if (file_exists($contentFileFullPath)) {
     require_once($contentFileFullPath);

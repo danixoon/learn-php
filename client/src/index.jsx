@@ -25,10 +25,14 @@ const componentMap = {
 // Рендрит React-компоненты под элементы с соответствующими id
 document.addEventListener("DOMContentLoaded", async () => {
   // Получает данные об начальном состоянии с сервера
-  const state = window.location.href.split("/")[3];
-  const res = await axios.get("api/store.php", { params: { state } });
-  console.log(res);
-  store = createStore(res.data);
+
+  const head = document.getElementsByTagName("head")[0];
+  const initialStore = JSON.parse(head.getAttribute("data-store"));
+  head.removeAttribute("data-store");
+
+  store = createStore(initialStore);
+
+  // console.log(store);
 
   for (let k in componentMap) {
     const el = document.getElementById(k);
