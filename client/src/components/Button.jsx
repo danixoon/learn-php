@@ -1,14 +1,18 @@
 import { connect } from "react-redux";
 import React, { useState } from "react";
 
+import "./Button.scss";
+
 const Button = props => {
-  const { username } = props;
-  const [count, onClick] = useState(0);
+  const { children, ...rest } = props;
+  // const [count, onClick] = useState(0);
   return (
-    <button onClick={() => onClick(count + 1)}>
-      clicks: {count}; nice, {username}
+    <button {...rest} className="btn btn-primary">
+      {children}
     </button>
   );
 };
 
-export default connect(store => ({ username: store.username }))(Button);
+export default Button;
+
+// export default connect(store => ({ username: store.username }))(Button);

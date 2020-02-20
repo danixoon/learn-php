@@ -7,7 +7,7 @@ import Header from "./pages/Header";
 import Auth from "./pages/Auth";
 import Footer from "./pages/Footer";
 
-import "./styles.css";
+import "./scss/default.scss";
 
 export let store = null;
 
@@ -25,7 +25,8 @@ const componentMap = {
 // Рендрит React-компоненты под элементы с соответствующими id
 document.addEventListener("DOMContentLoaded", async () => {
   // Получает данные об начальном состоянии с сервера
-  const res = await axios.get("/store.php");
+  const state = window.location.href.split("/")[3];
+  const res = await axios.get("api/store.php", { params: { state } });
   console.log(res);
   store = createStore(res.data);
 
