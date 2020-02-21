@@ -1,0 +1,29 @@
+tasks:
+  - init: yarn install
+    command: yarn run start
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: echo "Replace me with a build script for the project."
+    command: echo "Replace me with omething that should run on every start, or just
+      remove me entirely."
+image:
+  file: .gitpod.Dockerfile
+
+ports:
+- port: 5000
+  onOpen: open-preview
+tasks:
+- name: Terminal
+  command: >
+    echo "";
+    echo "Commands you can try:";
+    echo " * apachectl stop";
+    echo " * apachectl start";
+    echo " * gp open /var/log/apache2/access.log";
+    echo " * gp open /var/log/apache2/error.log";
+- name: Apache
+  command: >
+    apachectl start &&
+    multitail /var/log/apache2/access.log -I /var/log/apache2/error.log

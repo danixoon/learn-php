@@ -1,0 +1,23 @@
+@import "./theme.scss";
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+#page-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
