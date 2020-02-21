@@ -1,11 +1,12 @@
 import { connect } from "react-redux";
 import React, { useState } from "react";
 import axios from "axios";
-import useInput from "../hooks/useInput";
-import Form from "../components/Form";
-import Button from "../components/Button";
+import useInput from "../../hooks/useInput";
+import Form from "../../components/Form";
+import Button from "../../components/Button";
 
 import "./Auth.scss";
+import Input from "../../components/Input";
 
 const Auth = props => {
   const [input, bind] = useInput();
@@ -19,8 +20,10 @@ const Auth = props => {
   return (
     <>
       <Form onSubmit={handleSubmit}>
-        <input {...bind} placeholder="username" type="username" name="username" />
-        <input {...bind} placeholder="password" type="password" name="password" />
+        <Input {...bind} label="Имя пользователя" placeholder="username" type="username" name="username" autoComplete="off" />
+        <Input {...bind} label="Пароль" placeholder="password" type="password" name="password" />
+        {/* <input className="input" {...bind} placeholder="username" type="username" name="username" autoComplete="off" /> */}
+        {/* <input {...bind} placeholder="password" type="password" name="password" /> */}
         <Button type="submit">Войти</Button>
       </Form>
     </>

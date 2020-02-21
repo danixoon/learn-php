@@ -2,10 +2,13 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import axios from "axios";
 import { Provider } from "react-redux";
-import { createStore } from "./store";
-import Header from "./pages/Header";
-import Auth from "./pages/Auth";
-import Footer from "./pages/Footer";
+import { createStore } from "./store/store";
+
+import Header from "./templates/page/Header";
+import Footer from "./templates/page/Footer";
+import Info from "./templates/page/Info";
+
+import Auth from "./templates/view/Auth";
 
 import "./scss/default.scss";
 
@@ -17,9 +20,10 @@ export const renderComponent = (element, node) => {
 
 // Мапа с компонентами, присоединёнными по id
 const componentMap = {
-  page__header: Header,
-  page__auth: Auth,
-  page__footer: Footer
+  "page-footer": Footer,
+  "page-header": Header,
+  "page-info": Info,
+  "page-view__auth": Auth
 };
 
 // Рендрит React-компоненты под элементы с соответствующими id

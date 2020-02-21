@@ -1,0 +1,19 @@
+@import "../scss/theme.scss";
+
+input.input {
+  display: block;
+  margin: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+
+  color: $gray-dark;
+
+  border: none;
+  border-bottom: 1px solid $gray-light;
+  // border-top: 1px solid $gray-light;
+}
+
+label.input {
+  color: $gray-darker;
+  // margin: 0 1rem;
+}

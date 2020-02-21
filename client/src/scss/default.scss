@@ -5,31 +5,16 @@ form {
   flex-direction: column;
 }
 
-input {
-  display: block;
-  margin: 0.5rem;
-  padding: 0.5rem;
 
-  color: $gray-dark;
 
-  border: none;
-  border-bottom: 1px solid $gray-light;
-}
-
-#page__content {
+#page-view {
   display: flex;
   justify-content: center;
   align-items: center;
   flex: 1;
 }
 
-#page__header {
-  border-bottom: 1px solid #eee;
-}
 
-#page__footer {
-  border-top: 1px solid #eee;
-}
 
 body {
   margin: 0;

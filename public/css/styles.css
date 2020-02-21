@@ -1,5 +1,64 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
+#page-header {
+  padding: 2rem;
+  border-bottom: 1px solid #eee; }
+
+body,
+input,
+button {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem; }
+
+a.link {
+  color: #5a92ff; }
+
+.list {
+  list-style-type: none; }
+  .list.list_horizontal {
+    padding: 0; }
+    .list.list_horizontal > .list__item {
+      display: inline;
+      margin: 0 2rem; }
+
+#page-footer {
+  border-top: 1px solid #eee; }
+
+body,
+input,
+button {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem; }
+
+#page-info {
+  display: flex;
+  position: fixed; }
+
+.info-popup {
+  display: flex;
+  flex-direction: column-reverse;
+  position: fixed;
+  right: 0;
+  bottom: 0; }
+
+.popup {
+  width: 200px;
+  margin: 0 0.25rem 0.25rem 0;
+  color: white;
+  background-color: #333; }
+  .popup .popup__close {
+    float: right;
+    cursor: pointer; }
+  .popup .popup__content {
+    display: block;
+    padding: 1rem 0.5rem; }
+  .popup .popup__timer {
+    height: 10px;
+    background-color: #5a92ff; }
+
 body,
 input,
 button {
@@ -16,8 +75,26 @@ button.btn-primary {
   background-color: #5a92ff;
   color: white; }
 
-#page__auth {
+#page-view__auth {
   min-width: 400px; }
+
+body,
+input,
+button {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem; }
+
+input.input {
+  display: block;
+  margin: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  color: #888;
+  border: none;
+  border-bottom: 1px solid #dddddd; }
+
+label.input {
+  color: #555; }
 
 body,
 input,
@@ -29,25 +106,11 @@ form {
   display: flex;
   flex-direction: column; }
 
-input {
-  display: block;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  color: #888;
-  border: none;
-  border-bottom: 1px solid #dddddd; }
-
-#page__content {
+#page-view {
   display: flex;
   justify-content: center;
   align-items: center;
   flex: 1; }
-
-#page__header {
-  border-bottom: 1px solid #eee; }
-
-#page__footer {
-  border-top: 1px solid #eee; }
 
 body {
   margin: 0;

@@ -28,8 +28,8 @@ defined("LIBRARY_PATH")
 defined("API_PATH")
   or define("API_PATH", realpath(dirname(__FILE__) . '/api'));
 
-defined("TEMPLATES_PATH")
-  or define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/templates'));
+defined("CONTENT_PATH")
+  or define("CONTENT_PATH", realpath(dirname(__FILE__) . '/content'));
 
 defined("VIEWS_PATH")
   or define("VIEWS_PATH", realpath(dirname(__FILE__) . '/views'));
@@ -37,4 +37,6 @@ defined("VIEWS_PATH")
 defined('PRODUCTION')
   or define("PRODUCTION", false);
 
-   ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL); 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);

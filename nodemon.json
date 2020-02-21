@@ -1,7 +1,7 @@
 {
   "restartable": "rs",
   "ignore": [".git", "node_modules/**/node_modules"],
-  "exec": "npm start",
+  "exec": "npm run dev:start",
   "watch": ["client/src/"],
   "env": {
     "NODE_ENV": "development"

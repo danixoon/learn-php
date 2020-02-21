@@ -1,1 +1,1 @@
-<div id="page__auth"></div>
+<div id="page-view__auth"></div>

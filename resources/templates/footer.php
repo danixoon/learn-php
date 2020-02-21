@@ -1,1 +1,0 @@
-<footer id="page__footer"></footer>

@@ -3,12 +3,11 @@
 require_once realpath(dirname(__FILE__) . "/../config.php");
 require_once LIBRARY_PATH . "/store.php";
 
-function renderTemplate($contentFile, $variables = array())
+function renderViewTemplate($contentFile, $variables = array())
 {
-  $contentFileFullPath = VIEWS_PATH . "/" . $contentFile;
+  $viewPath = VIEWS_PATH . "/" . $contentFile;
+  if (!file_exists($viewPath)) $viewPath = VIEWS_PATH . "/error.php";
 
-  // making sure passed in variables are in scope of the template
-  // each key in the $variables array will become a variable
   if (count($variables) > 0) {
     foreach ($variables as $key => $value) {
       if (strlen($key) > 0) {
@@ -16,28 +15,51 @@ function renderTemplate($contentFile, $variables = array())
       }
     }
   }
-
   $store = get_store();
+?>
 
-  echo `<html lang="ru">\n`
-    . "<head data-store='{$store}'>";
 
-  require_once(TEMPLATES_PATH . "/head-content.php");
+  <html lang="ru">
 
-  echo `<head/>`;
+  <head data-store='<?php echo $store ?>'>
+    <?php require_once(CONTENT_PATH . "/head.php"); ?>
+  </head>
 
-  require_once(TEMPLATES_PATH . "/header.php");
+  <body>
+    <div id="page-info"></div>
+    <header id="page-header"></header>
+    <div id="page-view">
+      <?php require_once($viewPath); ?>
+    </div>
+    <footer id="page-footer"></footer>
+  </body>
 
-  echo "<div id='page__content'>\n";
-
-  if (file_exists($contentFileFullPath)) {
-    require_once($contentFileFullPath);
-  } else {
-    require_once(TEMPLATES_PATH . "/error.php");
-  }
-
-  echo "</div>\n";
-
-  require_once(TEMPLATES_PATH . "/footer.php");
-  echo `<html/>`;
+  </html>
+<?php
 }
+
+// function renderTemplate($contentFile, $variables = array())
+// {
+//   
+//   echo `<html lang="ru">\n`
+//     . "<head data-store='{$store}'>";
+
+//   
+
+//   echo `<head/>`;
+
+//   require_once(TEMPLATES_PATH . "/header.php");
+
+//   echo "<div id='page__content'>\n";
+
+//   if (file_exists($contentFileFullPath)) {
+//     require_once($contentFileFullPath);
+//   } else {
+//     require_once(TEMPLATES_PATH . "/error.php");
+//   }
+
+//   echo "</div>\n";
+
+//   require_once(TEMPLATES_PATH . "/footer.php");
+//   echo `<html/>`;
+// }

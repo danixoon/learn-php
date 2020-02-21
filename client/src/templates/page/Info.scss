@@ -1,0 +1,39 @@
+@import "../../scss/theme.scss";
+
+#page-info {
+  display: flex;
+  position: fixed;
+}
+
+.info-popup {
+  display: flex;
+  flex-direction: column-reverse;
+
+  position: fixed;
+
+  right: 0;
+  bottom: 0;
+}
+
+.popup {
+  width: 200px;
+  margin: 0 0.25rem 0.25rem 0;
+  
+  color: white;
+  background-color: #333;
+
+  .popup__close {
+    float: right;
+    cursor: pointer;
+  }
+
+  .popup__content {
+    display: block;
+    padding: 1rem 0.5rem;
+  }
+
+  .popup__timer {
+    height: 10px;
+    background-color: $primary-color;
+  }
+}

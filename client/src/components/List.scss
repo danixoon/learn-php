@@ -1,0 +1,12 @@
+.list {
+  list-style-type: none;
+
+  &.list_horizontal {
+    padding: 0;
+
+    & > .list__item {
+      display: inline;
+      margin: 0 2rem;
+    }
+  }
+}
