@@ -1,0 +1,14 @@
+#page-view__main {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.main__pepe {
+  flex: 1 1 20rem;
+}
+
+.main__text {
+  flex: 3 1 10rem;
+}

@@ -1,16 +1,16 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  plugins: [new MiniCssExtractPlugin({ filename: "/../css/styles.css" })],
+  plugins: [new MiniCssExtractPlugin({ filename: "css/styles.css" })],
   target: "web",
   entry: ["babel-polyfill", __dirname + "/client/src/index.jsx"],
   // mode: "development",
   // devtool: "eval",
   output: {
-    path: __dirname + "/public/js",
+    path: __dirname + "/public",
     library: "app",
     libraryTarget: "var",
-    filename: "index.js"
+    filename: "js/index.js"
   },
   resolve: {
     extensions: [".js", ".jsx"]
@@ -30,9 +30,9 @@ module.exports = {
           // Creates `style` nodes from JS strings
           "style-loader",
           MiniCssExtractPlugin.loader,
-
           // Translates CSS into CommonJS
           "css-loader",
+
           // Compiles Sass to CSS
           "sass-loader"
         ]
@@ -53,7 +53,12 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ["file-loader"]
+        use: {
+          loader: "file-loader",
+          options: {
+            outputPath: "img"
+          }
+        }
       }
     ]
   }

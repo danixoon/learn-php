@@ -9,6 +9,7 @@ import Footer from "./templates/page/Footer";
 import Info from "./templates/page/Info";
 
 import Auth from "./templates/view/Auth";
+import Main from "./templates/view/Main";
 
 import "./scss/default.scss";
 
@@ -23,7 +24,8 @@ const componentMap = {
   "page-footer": Footer,
   "page-header": Header,
   "page-info": Info,
-  "page-view__auth": Auth
+  "page-view__auth": Auth,
+  "page-view__main": Main
 };
 
 // Рендрит React-компоненты под элементы с соответствующими id

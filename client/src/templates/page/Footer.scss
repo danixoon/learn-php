@@ -1,3 +1,7 @@
+@import "../../scss/theme.scss";
+
 #page-footer {
-  border-top: 1px solid #eee;
+  border-top: 1px solid $gray-light;
+  color: white;
+  background-color: $gray-darker;
 }

@@ -1,3 +1,4 @@
+@import "./typography.scss";
 @import "./theme.scss";
 
 form {
@@ -5,19 +6,23 @@ form {
   flex-direction: column;
 }
 
-
-
 #page-view {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex: 1;
+
+  & > * {
+    display: flex;
+  }
 }
 
-
+.img {
+  max-width: 100%;
+  height: auto;
+}
 
 body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
