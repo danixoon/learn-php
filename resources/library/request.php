@@ -1,9 +1,7 @@
 <?php
 require_once realpath(dirname(__FILE__) . "/../config.php");
 
-function handle_request(string $method, callable ...$callbacks)
-{
-  function handle_error($error)
+function handle_error($error)
   {
     if (!isset($error["code"])) $error["code"] = 400;
 
@@ -14,6 +12,8 @@ function handle_request(string $method, callable ...$callbacks)
     echo $response;
   }
 
+function handle_request(string $method, callable ...$callbacks)
+{
   if ($_SERVER['REQUEST_METHOD'] === $method) {
     $proceed_callback = function (int $id = 0) use (&$proceed_callback, $callbacks) {
       if ($id >= count($callbacks)) return;

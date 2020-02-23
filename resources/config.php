@@ -1,11 +1,12 @@
 <?php
 
+
 $config = array(
   "db" => array(
     "database" => array(
-      "dbname" => "database1",
-      "username" => "dbUser",
-      "password" => "pa$$",
+      "dbname" => "owobase",
+      "username" => "root",
+      "password" => null,
       "host" => "localhost"
     ),
   ),
@@ -40,3 +41,24 @@ defined('PRODUCTION')
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+$db = $config["db"]["database"];
+$mysqli = new mysqli($db["host"], $db["username"], $db["password"], $db["dbname"]);
+if ($mysqli->connect_errno) {
+  echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+}
+
+// Загрузка сессии
+session_start();
+if (!isset($_SESSION["id"])) {
+  $headers =  getallheaders();
+  $token = $headers["Authorization"] ?? null;
+  $id = null;
+  if (isset($token)) {
+    if ($token === "1488") {
+      $id = "dane4ka";
+      header_remove("Authorization");
+    }
+  }
+  $_SESSION["id"] = $id;
+}
