@@ -20,6 +20,12 @@ const reducers = {
       default:
         return store;
     }
+  },
+  error: (store = {}, { type, payload }) => {
+    switch (type) {
+      default:
+        return store;
+    }
   }
 };
 
@@ -30,5 +36,9 @@ const localState = {
 };
 
 export const createStore = initialState => {
-  return createReduxStore(combineReducers(reducers), { ...localState, ...initialState }, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+  return createReduxStore(
+    combineReducers(reducers),
+    { ...localState, ...initialState },
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  );
 };

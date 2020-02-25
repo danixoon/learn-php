@@ -3,8 +3,7 @@ require_once "../resources/config.php";
 require_once LIBRARY_PATH . "/template.php";
 
 $view = $_GET["view"] ?? "main";
+$route = ROUTES_PATH . "/{$view}.php";
 
-if (substr($view, 0, 3) === "api") {
-  header("Content-Type: application/json");
-  include_once API_PATH . substr($view, 3) . ".php";
-} else renderViewTemplate($view . ".php", array("view" => $view));
+if (file_exists($route)) include_once $route;
+else renderViewTemplate("error", json_encode(array("error" => "404")));

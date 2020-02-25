@@ -26,8 +26,8 @@ $config = array(
 defined("LIBRARY_PATH")
   or define("LIBRARY_PATH", realpath(dirname(__FILE__) . '/library'));
 
-defined("API_PATH")
-  or define("API_PATH", realpath(dirname(__FILE__) . '/api'));
+defined("ROUTES_PATH")
+  or define("ROUTES_PATH", realpath(dirname(__FILE__) . '/routes'));
 
 defined("CONTENT_PATH")
   or define("CONTENT_PATH", realpath(dirname(__FILE__) . '/content'));

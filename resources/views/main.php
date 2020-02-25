@@ -1,1 +1,0 @@
-<div id="page-view__main"></div>

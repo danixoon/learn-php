@@ -3,22 +3,20 @@
 require_once realpath(dirname(__FILE__) . "/../config.php");
 require_once LIBRARY_PATH . "/store.php";
 
-function renderViewTemplate($contentFile, $variables = array())
+
+
+function renderViewTemplate($viewName, $store)
 {
-  $viewPath = VIEWS_PATH . "/" . $contentFile;
-  if (!file_exists($viewPath)) $viewPath = VIEWS_PATH . "/error.php";
+  $views = array(
+    "auth" => "page-view__auth",
+    "main" => "page-view__main",
+    "error" => "page-view__error"
+  );
 
-  if (count($variables) > 0) {
-    foreach ($variables as $key => $value) {
-      if (strlen($key) > 0) {
-        ${$key} = $value;
-      }
-    }
-  }
-  $store = get_store();
+  $viewClass = $views[$viewName] ?? null;
+
+  if (!isset($viewClass)) $viewClass = $views["error"];
 ?>
-
-
   <html lang="ru">
 
   <head data-store='<?php echo $store ?>'>
@@ -28,38 +26,12 @@ function renderViewTemplate($contentFile, $variables = array())
   <body>
     <div id="page-info"></div>
     <header id="page-header"></header>
-    <div id="page-view">
-      <?php require_once($viewPath); ?>
-    </div>
+
+    <div id="<?php echo $viewClass ?>"></div>
+
     <footer id="page-footer"></footer>
   </body>
 
   </html>
 <?php
 }
-
-// function renderTemplate($contentFile, $variables = array())
-// {
-//   
-//   echo `<html lang="ru">\n`
-//     . "<head data-store='{$store}'>";
-
-//   
-
-//   echo `<head/>`;
-
-//   require_once(TEMPLATES_PATH . "/header.php");
-
-//   echo "<div id='page__content'>\n";
-
-//   if (file_exists($contentFileFullPath)) {
-//     require_once($contentFileFullPath);
-//   } else {
-//     require_once(TEMPLATES_PATH . "/error.php");
-//   }
-
-//   echo "</div>\n";
-
-//   require_once(TEMPLATES_PATH . "/footer.php");
-//   echo `<html/>`;
-// }

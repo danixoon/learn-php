@@ -1,9 +1,10 @@
 <?php
-require_once realpath(dirname(__FILE__) . "/../config.php");
+require_once realpath(dirname(__FILE__) . "/../../config.php");
 require_once LIBRARY_PATH . "/request.php";
 require_once LIBRARY_PATH . "/middleware/auth.php";
 
-handle_request("GET", $auth_middleware,  function () {
+handle_request("GET", function () {
+  header("Content-Type: application/json");
   $username =  $_REQUEST["username"] ?? null;
   $password = $_REQUEST["password"] ?? null;
 

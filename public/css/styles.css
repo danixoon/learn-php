@@ -15,6 +15,7 @@ a.link {
       margin: 0 2rem; }
 
 #page-footer {
+  margin-top: auto;
   border-top: 1px solid #dddddd;
   color: white;
   background-color: #333; }
@@ -56,7 +57,8 @@ button.btn-primary {
   color: white; }
 
 #page-view__auth {
-  flex-grow: 1;
+  min-width: 400px;
+  margin: auto;
   justify-content: center;
   align-items: center; }
 
@@ -93,12 +95,6 @@ button {
 form {
   display: flex;
   flex-direction: column; }
-
-#page-view {
-  display: flex;
-  flex: 1; }
-  #page-view > * {
-    display: flex; }
 
 .img {
   max-width: 100%;
