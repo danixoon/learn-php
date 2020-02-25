@@ -14,22 +14,7 @@ const MainView = props => {
   const { addPopup } = props;
   return (
     <>
-      <div className="main__pepe">
-        <img className="img" src={pepe} />
-      </div>
-      <div className="main__text">
-        <h1 style={{ textAlign: "center" }}> Здравствуй, друг! </h1>
-        <p>
-          Это страничка пепе, где ты сможешь отыскать множество{" "}
-          <Link
-            onClick={() => {
-              addPopup("Ура! Ты нашёл одну из них!", 3000);
-            }}
-          >
-            <strong> тайн~</strong>
-          </Link>
-        </p>
-      </div>
+      
     </>
   );
 };

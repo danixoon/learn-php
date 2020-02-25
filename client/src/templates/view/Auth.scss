@@ -1,11 +1,18 @@
 #page-view__auth {
   // background-color: red;
-  min-width: 400px;
-  // min-height: 600px;
 
-  margin: auto;
-  // flex-grow: 1;
-
+  flex-grow: 1;
   justify-content: center;
   align-items: center;
+  display: flex;
+}
+
+.auth__form {
+  flex-basis: 400px;
+
+  margin: 0.5rem;
+  padding: 2rem;
+
+  align-self: center;
+  justify-content: center;
 }

@@ -15,13 +15,13 @@ const Header = props => {
         <ListItem>
           <Link href="/main">Главная</Link>
         </ListItem>
-        <ListItem style={{ float: "right" }}>
+        <ListItem>
           <Link
             onClick={() => {
               addPopup("Привет!", 3000);
             }}
           >
-            Привет, {username}
+            Аккаунт
           </Link>
         </ListItem>
       </List>

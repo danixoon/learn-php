@@ -19,9 +19,9 @@ const AuthView = props => {
   };
   return (
     <>
-      <Form onSubmit={handleSubmit}>
-        <Input {...bind} label="Имя пользователя" placeholder="username" type="username" name="username" autoComplete="off" />
-        <Input {...bind} label="Пароль" placeholder="password" type="password" name="password" />
+      <Form className="auth__form form_card" onSubmit={handleSubmit}>
+        <Input {...bind} placeholder="Логин" type="username" name="username" autoComplete="off" />
+        <Input {...bind} placeholder="Пароль" type="password" name="password" />
         {/* <input className="input" {...bind} placeholder="username" type="username" name="username" autoComplete="off" /> */}
         {/* <input {...bind} placeholder="password" type="password" name="password" /> */}
         <Button type="submit">Войти</Button>
