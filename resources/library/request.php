@@ -2,15 +2,15 @@
 require_once realpath(dirname(__FILE__) . "/../config.php");
 
 function handle_error($error)
-  {
-    if (!isset($error["code"])) $error["code"] = 400;
+{
+  if (!isset($error["code"])) $error["code"] = 400;
 
-    http_response_code($error["code"]);
-    unset($error["code"]);
+  http_response_code($error["code"]);
+  unset($error["code"]);
 
-    $response = json_encode($error);
-    echo $response;
-  }
+  $response = json_encode($error);
+  echo $response;
+}
 
 function handle_request(string $method, callable ...$callbacks)
 {
@@ -32,6 +32,6 @@ function create_error(string $message = "error", int $code = 400, array $payload
 {
   $error = array("message" => $message, "code" => $code);
   if (isset($payload)) $error["error"] = $payload;
-  
+
   return $error;
 }

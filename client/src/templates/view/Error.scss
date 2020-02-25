@@ -1,0 +1,18 @@
+@import "../../scss/theme.scss";
+
+#page-view__error {
+  margin: auto;
+}
+
+.error__label {
+  text-align: center;
+}
+
+.error__code {
+  color: #b00;
+  font-size: 2rem;
+}
+
+.error__description {
+  text-align: center;
+}

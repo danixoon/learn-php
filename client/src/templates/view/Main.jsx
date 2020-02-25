@@ -10,7 +10,7 @@ import "./Main.scss";
 import Link from "../../components/Link";
 import { addPopup } from "../../store/actions";
 
-const Main = props => {
+const MainView = props => {
   const { addPopup } = props;
   return (
     <>
@@ -34,4 +34,4 @@ const Main = props => {
   );
 };
 
-export default connect(store => ({ username: store.user.username }), { addPopup })(Main);
+export default connect(store => ({ username: store.user.username }), { addPopup })(MainView);

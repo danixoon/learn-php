@@ -6,15 +6,6 @@ form {
   flex-direction: column;
 }
 
-// #page-view {
-//   display: flex;
-//   flex: 1;
-
-//   & > * {
-//     display: flex;
-//   }
-// }
-
 .img {
   max-width: 100%;
   height: auto;
@@ -25,4 +16,5 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  color: $gray-darker;
 }

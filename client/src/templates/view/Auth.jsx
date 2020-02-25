@@ -8,12 +8,12 @@ import Button from "../../components/Button";
 import "./Auth.scss";
 import Input from "../../components/Input";
 
-const Auth = props => {
+const AuthView = props => {
   const [input, bind] = useInput();
   const handleSubmit = () => {
     console.log("you submitted: ", input);
     axios
-      .get("/api/auth.php", { params: { ...input, token: "1488" } })
+      .get("/api/auth", { params: { ...input, token: "1488" } })
       .then(res => console.log(res.data))
       .catch(err => console.log(err.response.data));
   };
@@ -30,4 +30,4 @@ const Auth = props => {
   );
 };
 
-export default connect(store => ({ username: store.user.username }))(Auth);
+export default connect(store => ({ username: store.user.username }))(AuthView);

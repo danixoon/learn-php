@@ -8,10 +8,12 @@ import Header from "./templates/page/Header";
 import Footer from "./templates/page/Footer";
 import Info from "./templates/page/Info";
 
-import Auth from "./templates/view/Auth";
-import Main from "./templates/view/Main";
+import AuthView from "./templates/view/Auth";
+import MainView from "./templates/view/Main";
+import ErrorView from "./templates/view/Error";
 
 import "./scss/default.scss";
+
 
 export let store = null;
 
@@ -24,8 +26,9 @@ const componentMap = {
   "page-footer": Footer,
   "page-header": Header,
   "page-info": Info,
-  "page-view__auth": Auth,
-  "page-view__main": Main
+  "page-view__auth": AuthView,
+  "page-view__main": MainView,
+  "page-view__error": ErrorView
 };
 
 // Рендрит React-компоненты под элементы с соответствующими id

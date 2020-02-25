@@ -5,7 +5,7 @@ require_once LIBRARY_PATH . "/store.php";
 
 
 
-function renderViewTemplate($viewName, $store)
+function renderViewTemplate($viewName, array $store)
 {
   $views = array(
     "auth" => "page-view__auth",
@@ -19,7 +19,7 @@ function renderViewTemplate($viewName, $store)
 ?>
   <html lang="ru">
 
-  <head data-store='<?php echo $store ?>'>
+  <head data-store='<?php echo json_encode($store) ?>'>
     <?php require_once(CONTENT_PATH . "/head.php"); ?>
   </head>
 

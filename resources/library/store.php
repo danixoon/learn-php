@@ -9,5 +9,5 @@ function get_store()
     )
   );
 
-  return json_encode($store);
+  return $store;
 }
